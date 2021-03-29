@@ -1,0 +1,28 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.shrink-slow {
+    animation: shrinkSlow ease 1.5s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    // background-color: #AAA;
+}
+@keyframes shrinkSlow {
+    0% { opacity: 1; transform: scaleX(1); max-height: 1000px; }
+    100% { opacity: 0; transform: scaleX(0); max-height: 0px; }
+}
+
+.expand-slow {
+    max-height: 0px;
+    animation: expandSlow ease 1.5s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    // background-color: #AAA;
+}
+@keyframes expandSlow {
+    0% { opacity: 0; transform: scaleX(0); max-height: 0px; }
+    100% { opacity: 1; transform: scaleX(1); max-height: 1000px; }
+}
+.initially-no-display:not(.expand-slow, .shrink-slow) {
+    display: none;
+}
