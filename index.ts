@@ -39,7 +39,9 @@ function select_time_period(timing: number) {
     target_time = timing;
     document.getElementById('time-select-container')?.classList.add('shrink-slow');
     document.getElementById('time-test-container')?.classList.add('expand-slow');
+    document.getElementById('time-test-container')?.classList.remove('initially-no-display')
     document.getElementById('restart-container')?.classList.add('expand-slow');
+    document.getElementById('restart-container')?.classList.remove('initially-no-display')
 
     const formatted_time = format_timing(timing);
     (<HTMLElement> document.getElementById('wait-period-in-header')).innerText = formatted_time;
@@ -158,6 +160,7 @@ function do_end_btn_pressed() {
     document.getElementById('time-test-container')?.classList.remove('expand-slow');
     document.getElementById('time-test-container')?.classList.add('shrink-slow');
     document.getElementById('time-results-container')?.classList.add('expand-slow');
+    document.getElementById('time-results-container')?.classList.remove('initially-no-display')
 
     assign_text_to_element(format_timing(dt), 'results-1');
     assign_text_to_element(format_timing(Math.abs(dt - target_time)), 'results-2');

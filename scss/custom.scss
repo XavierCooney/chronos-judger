@@ -23,6 +23,6 @@
     0% { opacity: 0; transform: scaleX(0); max-height: 0px; }
     100% { opacity: 1; transform: scaleX(1); max-height: 1000px; }
 }
-.initially-no-display:not(.expand-slow, .shrink-slow) {
+.initially-no-display {
     display: none;
 }
